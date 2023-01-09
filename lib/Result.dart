@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:second_app/Table.dart';
 
 class ResultPage extends StatefulWidget {
-  const ResultPage({Key? key}) : super(key: key);
+  var somme='';
+  ResultPage(this.somme);
 
   @override
-  State<ResultPage> createState() => _ResultPageState();
+  State<ResultPage> createState() => _ResultPageState(somme);
 }
 
 class _ResultPageState extends State<ResultPage> {
+  var somme='';
+  _ResultPageState(this.somme);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,13 +46,13 @@ class _ResultPageState extends State<ResultPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('The Mark is:', style: TextStyle(
+                        Text('The Mark is: ', style: TextStyle(
                           fontFamily: 'MontaguSlab',
                           fontSize: 21,
                           fontWeight: FontWeight.w700,
                           color: Color(0xFF120D3A),
                         ),),
-                        Text('/20', style: TextStyle(
+                        Text('$somme /20', style: TextStyle(
                           fontFamily: 'MontaguSlab',
                           fontSize: 21,
                           fontWeight: FontWeight.w700,
